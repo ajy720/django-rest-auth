@@ -39,6 +39,15 @@ Configuration
         - REGISTER_SERIALIZER - serializer class in ``rest_auth.registration.views.RegisterView``, default value ``rest_auth.registration.serializers.RegisterSerializer``
     
         .. note:: The custom REGISTER_SERIALIZER must define a ``def save(self, request)`` method that returns a user model instance
+    
+    Example configuration:
+
+    .. code-block:: python
+
+        REST_AUTH_REGISTER_SERIALIZERS = {
+            'REGISTER_SERIALIZER': 'path.to.custom.RegisterSerializer',
+            ...
+        }
 
 - **REST_AUTH_TOKEN_MODEL** - model class for tokens, default value ``rest_framework.authtoken.models``
 
